@@ -5,23 +5,27 @@
 # Defining a function named guess
 function guess {
     
-    local num_of_files=$(ls -l | grep "^-" | wc -l)
+    local num_of_files=$(ls -la | grep "^-" | wc -l)
 
     echo "How many files are in the current directory? Type your answer:"
+    local ans
     read ans
-
-    while [[ $ans -ne $num_of_files ]]
+    
+    while [[ $ans -ne $num_of_files ]] || [[ $ans =~ [^0-9] ]]
     do
-	if [[ $ans -gt $num_of_files ]]
+	if [[ $ans =~ [^0-9] ]]
+	then
+	    echo "*Incorrect input type, please input a non-negative integer*"
+	elif [[ $ans -gt $num_of_files ]]
 	then
 	    echo "Unfortunately, you guessed too high."
 	else
-	    echo "Unfortumately, you guessed too low."
+	    echo "Unfortunately, you guessed too low."
 	fi
 	echo "Please type in another answer:"
 	read ans
     done
-
+    
     echo "Congratulations! You guessed it right!!!"
 }
 
