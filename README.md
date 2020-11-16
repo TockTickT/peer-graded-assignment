@@ -3,7 +3,7 @@
 ## Guessing game
 
 **Time of creation `README.md`:** 
-2020年 11月 16日 星期一 19:59:54 CST
+2020年 11月 16日 星期一 23:16:32 CST
 
 **Lines of code `guessinggame.sh`:** 
-29
+33
