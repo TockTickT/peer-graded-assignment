@@ -11,7 +11,7 @@ function guess {
     local ans
     read ans
     
-    while [[ $ans -ne $num_of_files ]] || [[ $ans =~ [^0-9] ]]
+    while [[ $ans =~ [^0-9] ]] || [[ $ans -ne $num_of_files ]]
     do
 	if [[ $ans =~ [^0-9] ]]
 	then
